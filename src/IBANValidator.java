@@ -5,16 +5,15 @@ import java.math.BigInteger;
  * Класс предназначен для проверки IBAN-номера на валидность
  */
 public class IBANValidator {
+    private static final int[] countryCodeLength = {22, 27, 22, 27, 24, 28, 18, 16, 21, 24};
+    private static final String[] countryCode = {"DE", "FR", "GB", "IT", "ES", "PL", "NL", "BE", "CH", "SE"};
 
     /**
      * Метод реализует проверку строки на соответствие стандарту № 13616 Международной организации по стандартизации
      * ИСО и Европейского комитета по банковским стандартам ECBS, European Committee for Banking Standard.
-     * @param a - исходная строчная переменная, содержащая неочищенный IBAN-номер, передаваемый вызывающим методом.
-     * @return - будет возвращено значение true, если номер валиден, в противном случае - false.
+     * @param a исходная строчная переменная, содержащая неочищенный IBAN-номер, передаваемый вызывающим методом.
+     * @return будет возвращено значение true, если номер валиден, в противном случае - false.
      */
-    private static final int[] countryCodeLength = {22, 27, 22, 27, 24, 28, 18, 16, 21, 24};
-    private static final String[] countryCode = {"DE", "FR", "GB", "IT", "ES", "PL", "NL", "BE", "CH", "SE"};
-
     public boolean isValid(String a) {
 
         String cleanedInput = a.replaceAll("[^a-zA-Z0-9]", "").toUpperCase();
