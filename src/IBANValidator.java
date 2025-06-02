@@ -1,8 +1,8 @@
 import java.math.BigInteger;
 
 /**
- * @author Антон Городсков, группа Java412
  * Класс предназначен для проверки IBAN-номера на валидность
+ * @author Антон Городсков, группа Java412
  */
 public class IBANValidator {
     private static final int[] countryCodeLength = {22, 27, 22, 27, 24, 28, 18, 16, 21, 24};
